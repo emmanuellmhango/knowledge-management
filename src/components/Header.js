@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { verbs } from "./verbs";
 
 function Header() {
-  const [isChecked, setIsChecked] = useState(false);
+  const [verbsList, setVerbsList] = useState(verbs);
 
-  const handleOnChange = () => {
-    setIsChecked(!isChecked);
+  const handleOnChange = (index) => {
+    const updatedVerbs = [...verbsList];
+    updatedVerbs[index].isChecked = !updatedVerbs[index].isChecked;
+    setVerbsList(updatedVerbs);
   };
 
   return (
@@ -13,114 +16,21 @@ function Header() {
         <span className="verb">Filter By</span>
       </div>
       <div className="header-actions">
-        <span className="verb">
-          <input
-            type="checkbox"
-            id="topping"
-            name="topping"
-            value="Provide"
-            checked={isChecked}
-            onChange={handleOnChange}
-            className="checkbox-input"
-          />
-          Provide
-        </span>
-        <span className="verb">
-          <input
-            type="checkbox"
-            id="topping"
-            name="topping"
-            value="Enforce"
-            checked={isChecked}
-            onChange={handleOnChange}
-            className="checkbox-input"
-          />
-          Enforce
-        </span>
-        <span className="verb">
-          <input
-            type="checkbox"
-            id="topping"
-            name="topping"
-            value="Screen Patients"
-            checked={isChecked}
-            onChange={handleOnChange}
-            className="checkbox-input"
-          />
-          Screen Patients
-        </span>
-        <span className="verb">
-          <input
-            type="checkbox"
-            id="topping"
-            name="topping"
-            value="Fill"
-            checked={isChecked}
-            onChange={handleOnChange}
-            className="checkbox-input"
-          />
-          Fill
-        </span>
-        <span className="verb">
-          <input
-            type="checkbox"
-            id="topping"
-            name="topping"
-            value="Collect"
-            checked={isChecked}
-            onChange={handleOnChange}
-            className="checkbox-input"
-          />
-          Collect
-        </span>
-        <span className="verb">
-          <input
-            type="checkbox"
-            id="topping"
-            name="topping"
-            value="Record"
-            checked={isChecked}
-            onChange={handleOnChange}
-            className="checkbox-input"
-          />
-          Record
-        </span>
-        <span className="verb">
-          <input
-            type="checkbox"
-            id="topping"
-            name="topping"
-            value="Screen"
-            checked={isChecked}
-            onChange={handleOnChange}
-            className="checkbox-input"
-          />
-          Screen
-        </span>
-        <span className="verb">
-          <input
-            type="checkbox"
-            id="topping"
-            name="topping"
-            value="Ask"
-            checked={isChecked}
-            onChange={handleOnChange}
-            className="checkbox-input"
-          />
-          Ask
-        </span>
-        <span className="verb">
-          <input
-            type="checkbox"
-            id="topping"
-            name="topping"
-            value="Provide"
-            checked={isChecked}
-            onChange={handleOnChange}
-            className="checkbox-input"
-          />
-          Provide
-        </span>
+        {verbs &&
+          verbsList.map((verb, index) => (
+            <span className="verb" key={index}>
+              <input
+                type="checkbox"
+                id={verb.id}
+                name={verb.name}
+                value={verb.name}
+                checked={verb.isChecked}
+                onChange={() => handleOnChange(index)}
+                className="checkbox-input"
+              />
+              {verb.name}
+            </span>
+          ))}
       </div>
     </div>
   );
