@@ -1,8 +1,24 @@
 import React, { useState } from "react";
-import Xarrow, { Xwrapper } from "react-xarrows";
+import Xarrow, { useXarrow, xarrowPropsType, Xwrapper } from "react-xarrows";
+import Draggable from "react-draggable";
 import { players } from "./players";
-import IndividualPlayer from "./IndividualPlayer";
 import "./styles.css";
+
+const IndividualPlayer = ({ player, onClick, emphasized }) => {
+  const updateXarrow = useXarrow();
+
+  return (
+    <Draggable onDrag={updateXarrow} onStop={updateXarrow}>
+      <button
+        id={player.id}
+        onClick={onClick}
+        className={emphasized ? "player emphasized" : "player"}
+      >
+        {player.name}
+      </button>
+    </Draggable>
+  );
+};
 
 const Dashboard = () => {
   const [selectedButton, setSelectedButton] = useState(null);
@@ -25,6 +41,9 @@ const Dashboard = () => {
                 onClick={() =>
                   handleButtonClick("Environmental Officer", players[0].id)
                 }
+                onTouchStart={() =>
+                  handleButtonClick("Environmental Officer", players[0].id)
+                }
                 emphasized={selectedButton === "Environmental Officer"}
               />
             </div>
@@ -35,6 +54,9 @@ const Dashboard = () => {
               <IndividualPlayer
                 player={players[1]}
                 onClick={() => handleButtonClick("HSA", players[1].id)}
+                onTouchStart={() =>
+                  handleButtonClick("Environmental Officer", players[0].id)
+                }
                 emphasized={selectedButton === "HSA"}
               />
             </div>
@@ -44,6 +66,9 @@ const Dashboard = () => {
                 player={players[2]}
                 onClick={() =>
                   handleButtonClick("Lab Technician", players[2].id)
+                }
+                onTouchStart={() =>
+                  handleButtonClick("Environmental Officer", players[0].id)
                 }
                 emphasized={selectedButton === "Lab Technician"}
               />

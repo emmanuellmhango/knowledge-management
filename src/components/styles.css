@@ -37,6 +37,7 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(80deg, #eb58e180, rgba(34, 121, 128, 1));
+  border-top: 2px solid #da61ff;
 }
 
 .boxStyle {
@@ -102,7 +103,7 @@
   border: 1px solid #ccc;
   border-radius: 100px;
   cursor: pointer;
-  width: 100px;
+  width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
