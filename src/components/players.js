@@ -1,44 +1,56 @@
 export const players = [
   {
-    id: 1,
+    id: "ENVIRONMENT",
     name: "Environmental Officer",
     roles: ["Provide"],
     emphasized: false,
-    relationships: [3, 5],
+    relationships: ["IDSR", "CLINICAL"],
+    description:
+      "The Environmental Officer is responsible for providing the necessary equipment and supplies to the HSA.",
   },
   {
-    id: 2,
+    id: "HSA",
     name: "HSA",
     roles: ["Enforce"],
     emphasized: false,
-    relationships: [1, 4, 5],
+    relationships: ["ENVIRONMENT", "LABTECH", "CLINICAL"],
+    description:
+      "The HSA is responsible for enforcing the use of the equipment and supplies provided by the Environmental Officer.",
   },
   {
-    id: 3,
+    id: "IDSR",
     name: "IDSR Coordinator",
     roles: ["Screen Patients"],
     emphasized: false,
-    relationships: [6, 5, 1],
+    relationships: ["PHIM", "CLINICAL", "ENVIRONMENT"],
+    description:
+      "The IDSR Coordinator is responsible for screening patients for symptoms of disease.",
   },
   {
-    id: 4,
+    id: "LABTECH",
     name: "Lab Technician",
     roles: ["Fill"],
     emphasized: false,
-    relationships: [2, 5],
+    relationships: ["HSA", "CLINICAL"],
+    description:
+      "The Lab Technician is responsible for filling out the lab forms.",
   },
   {
-    id: 5,
+    id: "CLINICAL",
     name: "Clinical Officer",
     roles: ["Collect"],
     emphasized: false,
-    relationships: [1, 3, 4, 6],
+    relationships: ["ENVIRONMENT", "IDSR", "LABTECH", "PHIM"],
+    description:
+      "The Clinical Officer is responsible for collecting the lab forms from the Lab Technician.",
   },
   {
-    id: 6,
+    id: "PHIM",
     name: "PHIM",
     roles: ["Record"],
     emphasized: false,
-    relationships: [5, 3],
+    relationships: ["CLINICAL", "IDSR"],
+    description:
+      "The PHIM is responsible for recording the lab forms from the Clinical Officer.",
   },
 ];

@@ -1,15 +1,9 @@
 // Home.jsx
 import React, { useState } from "react";
-import Xarrow, {
-  useXarrow,
-  xarrowPropsType,
-  Xwrapper,
-  useXarrowProps,
-} from "react-xarrows";
+import { useXarrow } from "react-xarrows";
 import Draggable from "react-draggable";
 import ButtonComponent from "./IndividualPlayer";
 import Header from "./Header";
-import { players } from "./players";
 import "./styles.css";
 
 const DraggableBox = ({ box }) => {
