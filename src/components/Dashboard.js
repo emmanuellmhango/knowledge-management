@@ -1,26 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Xarrow, { Xwrapper } from "react-xarrows";
 import { players } from "./players";
 import IndividualPlayer from "./IndividualPlayer";
-import Header from "./Header";
-
 import "./styles.css";
 
 const Dashboard = () => {
   const [selectedButton, setSelectedButton] = useState(null);
   const [selectedPlayerId, setSelectedPlayerId] = useState(null);
-  const [css, setCss] = useState(null);
 
   const handleButtonClick = (label, id) => {
     setSelectedButton(label);
     setSelectedPlayerId(id);
-    setCss(null);
-    setCss(id);
   };
 
   return (
     <div className="container" id="canvas">
-      {/* <Header /> */}
       <Xwrapper>
         <div className="container-data">
           <div className="row">
