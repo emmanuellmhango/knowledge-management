@@ -2,7 +2,7 @@ export const players = [
   {
     id: "ENVIRONMENT",
     name: "Environmental Officer",
-    roles: ["Provide"],
+    roles: ["provide", "ask", "frequency", "covid"],
     emphasized: false,
     relationships: ["IDSR", "CLINICAL"],
     description:
@@ -11,7 +11,7 @@ export const players = [
   {
     id: "HSA",
     name: "HSA",
-    roles: ["Enforce"],
+    roles: ["enforce", "patients"],
     emphasized: false,
     relationships: ["ENVIRONMENT", "LABTECH", "CLINICAL"],
     description:
@@ -20,7 +20,7 @@ export const players = [
   {
     id: "IDSR",
     name: "IDSR Coordinator",
-    roles: ["Screen Patients"],
+    roles: ["screen", "patients"],
     emphasized: false,
     relationships: ["PHIM", "CLINICAL", "ENVIRONMENT"],
     description:
@@ -29,7 +29,7 @@ export const players = [
   {
     id: "LABTECH",
     name: "Lab Technician",
-    roles: ["Fill"],
+    roles: ["fill"],
     emphasized: false,
     relationships: ["HSA", "CLINICAL"],
     description:
@@ -38,7 +38,7 @@ export const players = [
   {
     id: "CLINICAL",
     name: "Clinical Officer",
-    roles: ["Collect"],
+    roles: ["collect", "patients"],
     emphasized: false,
     relationships: ["ENVIRONMENT", "IDSR", "LABTECH", "PHIM"],
     description:
@@ -47,7 +47,7 @@ export const players = [
   {
     id: "PHIM",
     name: "PHIM",
-    roles: ["Record"],
+    roles: ["record", "enforce", "covid"],
     emphasized: false,
     relationships: ["CLINICAL", "IDSR"],
     description:

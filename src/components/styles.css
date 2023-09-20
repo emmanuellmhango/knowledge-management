@@ -3,7 +3,7 @@
   src: local('Verdana'), url(../assets/fonts/Verdana.ttf) format('opentype');
 }
 
-@media screen and (max-width: 798px) {
+@media screen and (max-width: 792px) {
 
   .button-wrapper {
     flex: 1;
@@ -12,154 +12,159 @@
   }
 }
 
-@media screen and (min-width: 799px) {
+@media screen and (min-width: 793px) {
   .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      background: linear-gradient(90deg, #0062ff, #da61ff);
-      height: 100vh;
-      width: 100vw;
-      overflow-x: hidden;
-      overflow-y: hidden;
-    }
-  
-    .container-data {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      height: 100%;
-      padding-bottom: 10px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* background: linear-gradient(90deg, #0062ff, #da61ff); */
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
 
-    .graph-data {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      padding: 5px;
-    }
+  .container-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 10px;
+  }
 
-    .verbs-header-bar {
-      height: 100px;
-      width: 100%;
-      /* background: linear-gradient(50deg,  #edf107, #00b7ff); */
-      margin: 0;
-      padding: 0;
-    }
+  .graph-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+  }
 
-    .graph {
-      height: 100%;
-      min-width: 80%;
-      max-width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
+  .verbs-header-bar {
+    height: 100px;
+    width: 100%;
+    /* background: linear-gradient(50deg,  #edf107, #00b7ff); */
+    margin: 0;
+    padding: 0;
+  }
 
-    .graph-b {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
+  .graph {
+    height: 100%;
+    min-width: 80%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-    .player-description {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      font-size: 20px;
-      color: #fff;
-      width: 100%;
-      height: 100%;
-      padding: 10px;
-      font-size: small;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(80deg, #eb58e180, rgba(34, 121, 128, 1));
-      border-left: 1px solid #da61ff;
-    }
+  .graph-b {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-    .action-button {
-      height: 40px;
-      width: 150px;
-      border: none;
-      background: linear-gradient(30deg, #07ec8980, rgb(232, 221, 8));
-      cursor: pointer;
-      color: rgb(59, 60, 60);
-      font-weight: 600;
-    }
+  .player-description {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: rgb(82, 81, 81);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* background: linear-gradient(80deg, #eb58e180, rgba(34, 121, 128, 1)); */
+    border-left: 1px solid #abc;
+  }
 
-    .action-button:hover {
-      padding: 10px;
-      background: linear-gradient(30deg, rgb(232, 221, 8), #ec070780);
-      color: #fff;
-    }
+  .action-button {
+    height: 40px;
+    width: 150px;
+    border: none;
+    /* background: linear-gradient(30deg, #07ec8980, rgb(232, 221, 8)); */
+    background-color: rgba(34, 121, 128, 1);
+    cursor: pointer;
+    color: #f5f5f5;
+    font-weight: 600;
+  }
 
-    .boxStyle {
-      border: 1px #999 solid;
-      border-radius: 10px;
-      text-align: center;
-      width: 70px;
-      height: 30px;
-      color: #000;
-      align-items: center;
-      display: flex;
-      justify-content: center;
-    }
+  .action-button:hover {
+    padding: 10px;
+    background: linear-gradient(30deg, rgb(232, 221, 8), #ec070780);
+    color: #fff;
+  }
 
-    .row {
-      display: flex;
-      justify-content: space-evenly;
-      margin-bottom: 30px;
-      width: 100%;
-    }
+  .boxStyle {
+    border: 1px #999 solid;
+    border-radius: 10px;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    color: #000;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 
-    .verb {
-      padding: 10px;
-    }
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    width: 100%;
+  }
 
-    .button-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 30%;
-    }
+  .verb {
+    padding: 10px;
+  }
 
-    .checkbox-input {
-      width: 10px;
-      height: 10px;
-      border-radius: 25px;
-    }
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+  }
 
-    .header {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      background: linear-gradient(80deg, #eb58e180, rgba(34, 121, 128, 0.4));
-      width: 100%;
-      padding: 0;
-      font-size: small;
-      border: 2px solid rgba(34, 121, 128, 1);
-    }
+  .checkbox-input {
+    width: 12px;
+    height: 12px;
+    border-radius: 25px;
+  }
 
-    .verb-header {
-      color: #f5f5f5;
-      padding: 10px;
-    }
+  .header {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* background: linear-gradient(80deg, #eb58e180, rgba(34, 121, 128, 0.4)); */
+    width: 100%;
+    padding: 0;
+    font-size: small;
+    border-bottom: 1px solid #abc;
+  }
 
-    .header-actions {
-      display: flex;
-      flex-wrap: wrap;
-      color: #f1f0f0;
-      font-size: small;
-    }
+  .verb-header {
+    color: #f5f5f5;
+    padding: 10px;
+  }
+
+  .header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(82, 81, 81);
+    font-size: small;
+  }
+
+  .color {
+    color: rgb(82, 81, 81);
+  }
 
   .player {
     padding: 40px;
