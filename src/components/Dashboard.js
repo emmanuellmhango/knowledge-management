@@ -64,37 +64,37 @@ const Dashboard = () => {
 
   return (
     <div className="container" id="canvas">
-      <Xwrapper>
-        <div className="container-data">
-          <div className={selectedPlayerId ? "graph" : "graph-b"}>
-            <div className="verbs-header-bar">
-              <div className="header">
-                <div className="verb-header">
-                  <span className="verb color">Filter By</span>
-                </div>
-                <div className="header-actions">
-                  {verbs &&
-                    verbsList.map((verb, index) => (
-                      <span className="verb" key={index}>
-                        <input
-                          type="checkbox"
-                          id={verb.id}
-                          name={verb.name}
-                          value={verb.name}
-                          checked={verb.isChecked}
-                          onChange={() => handleVerbCheckboxChange(verb.name)}
-                          className="checkbox-input"
-                        />
-                        {verb.name}
-                      </span>
-                    ))}
-                </div>
+      <div onLoad={useXarrow()} className="container-data">
+        <div className={selectedPlayerId ? "graph" : "graph-b"}>
+          <div className="verbs-header-bar">
+            <div className="header">
+              <div className="verb-header">
+                <span className="verb color">Filter By</span>
+              </div>
+              <div className="header-actions">
+                {verbs &&
+                  verbsList.map((verb, index) => (
+                    <span className="verb" key={index}>
+                      <input
+                        type="checkbox"
+                        id={verb.id}
+                        name={verb.name}
+                        value={verb.name}
+                        checked={verb.isChecked}
+                        onChange={() => handleVerbCheckboxChange(verb.name)}
+                        className="checkbox-input"
+                      />
+                      {verb.name}
+                    </span>
+                  ))}
               </div>
             </div>
-            <div className="graph-data">
-              <div className="row">
-                <div className="button-wrapper"> &nbsp; </div>
-                <div className="button-wrapper">
+          </div>
+          <div className="graph-data">
+            <div className="row">
+              <div className="button-wrapper"> &nbsp; </div>
+              <div className="button-wrapper">
+                <Xwrapper>
                   <IndividualPlayer
                     player={players[0]}
                     onClick={() =>
@@ -110,11 +110,13 @@ const Dashboard = () => {
                       handleButtonClick(players[0].name, players[0].id)
                     }
                   />
-                </div>
-                <div className="button-wrapper"> &nbsp; </div>
+                </Xwrapper>
               </div>
-              <div className="row">
-                <div className="button-wrapper">
+              <div className="button-wrapper"> &nbsp; </div>
+            </div>
+            <div className="row">
+              <div className="button-wrapper">
+                <Xwrapper>
                   <IndividualPlayer
                     player={players[1]}
                     onClick={() =>
@@ -130,9 +132,11 @@ const Dashboard = () => {
                       handleButtonClick(players[1].name, players[1].id)
                     }
                   />
-                </div>
-                <div className="button-wrapper"></div>
-                <div className="button-wrapper">
+                </Xwrapper>
+              </div>
+              <div className="button-wrapper"></div>
+              <div className="button-wrapper">
+                <Xwrapper>
                   <IndividualPlayer
                     player={players[2]}
                     onClick={() =>
@@ -148,11 +152,13 @@ const Dashboard = () => {
                       handleButtonClick(players[2].name, players[2].id)
                     }
                   />
-                </div>
+                </Xwrapper>
               </div>
-              <div className="row">
-                <div className="button-wrapper"></div>
-                <div className="button-wrapper">
+            </div>
+            <div className="row">
+              <div className="button-wrapper"></div>
+              <div className="button-wrapper">
+                <Xwrapper>
                   <IndividualPlayer
                     player={players[3]}
                     onClick={() =>
@@ -168,11 +174,13 @@ const Dashboard = () => {
                       handleButtonClick(players[3].name, players[3].id)
                     }
                   />
-                </div>
-                <div className="button-wrapper"></div>
+                </Xwrapper>
               </div>
-              <div className="row">
-                <div className="button-wrapper">
+              <div className="button-wrapper"></div>
+            </div>
+            <div className="row">
+              <div className="button-wrapper">
+                <Xwrapper>
                   <IndividualPlayer
                     player={players[4]}
                     onClick={() =>
@@ -188,9 +196,11 @@ const Dashboard = () => {
                       handleButtonClick(players[4].name, players[4].id)
                     }
                   />
-                </div>
-                <div className="button-wrapper"></div>
-                <div className="button-wrapper">
+                </Xwrapper>
+              </div>
+              <div className="button-wrapper"></div>
+              <div className="button-wrapper">
+                <Xwrapper>
                   <IndividualPlayer
                     player={players[5]}
                     onClick={() =>
@@ -206,8 +216,10 @@ const Dashboard = () => {
                       handleButtonClick(players[5].name, players[5].id)
                     }
                   />
-                </div>
+                </Xwrapper>
               </div>
+            </div>
+            <Xwrapper>
               {players.map((player) =>
                 player.relationships.map((relationship, index) => {
                   const targetPlayer = players.find(
@@ -227,7 +239,7 @@ const Dashboard = () => {
                         showHead={false}
                         curveness={0.8}
                         className="xarrow"
-                        animateDrawing={true}
+                        animateDrawing={false}
                         tailSize={1}
                       />
                     );
@@ -235,7 +247,8 @@ const Dashboard = () => {
                   return null;
                 })
               )}
-
+            </Xwrapper>
+            <Xwrapper>
               {selectedPlayerId && (
                 <>
                   {players.map((player) => {
@@ -270,30 +283,31 @@ const Dashboard = () => {
                   })}
                 </>
               )}
+            </Xwrapper>
+          </div>
+        </div>
+        {selectedPlayerId && (
+          <div className="player-description">
+            <div className="description">
+              {selectedPlayerId &&
+                players.map((player) => {
+                  if (player.id === selectedPlayerId) {
+                    return <p key={player.id}>{player.description}</p>;
+                  }
+                  return null;
+                })}
+            </div>
+            <div className="action">
+              <button
+                className="action-button"
+                onClick={(event) => openForm(event)}
+              >
+                Show Form
+              </button>
             </div>
           </div>
-          {selectedPlayerId && (
-            <div className="player-description">
-              <div className="description">
-                {selectedPlayerId &&
-                  players.map((player) => {
-                    if (player.id === selectedPlayerId) {
-                      return <p key={player.id}>{player.description}</p>;
-                    }
-                  })}
-              </div>
-              <div className="action">
-                <button
-                  className="action-button"
-                  onClick={(event) => openForm(event)}
-                >
-                  Show Form
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      </Xwrapper>
+        )}
+      </div>
     </div>
   );
 };
