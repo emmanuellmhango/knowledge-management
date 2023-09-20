@@ -1,6 +1,6 @@
-# Knowledge Management Information System
+# Knowledge Management Information Flow
 
-This project is a dashboard that shows information flow between players players in the information ecosystem.
+This project is a dashboard that shows the information flow between players in the information ecosystem.
 
 ## Description
 
